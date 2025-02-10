@@ -13,11 +13,27 @@ if (!(is_dir($DARK_SIDE) && is_dir($LIGHT_SIDE))) {
         @file_put_contents($DARK_SIDE . "/index.php", "<?php http_response_code(401); exit('Access Denied'); ?>");
     }
 }
+
+// Database connection for FreeDB
+$DB_HOST = "sql.freedb.tech";
+$DB_PORT = "3306";
+$DB_NAME = "freedb_database";
+$DB_USER = "freedb_kkkkkkkkkkj";
+$DB_PASS = "T#dvfd9efpX$jRM.";
+
+try {
+    $pdo = new PDO("mysql:host=$DB_HOST;port=$DB_PORT;dbname=$DB_NAME;charset=utf8", $DB_USER, $DB_PASS);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Database Connection Failed: " . $e->getMessage());
+}
+
 $WANDA = json_decode(scarlet_witch('decrypt', file_get_contents($DARK_SIDE . "/detail.jitendraunatti"), ["DOCTOR_STRANGE","MARVEL_CINEMATIC_UNIVERSE","LOKESH_CINEMATIC_UNIVERSE"]), true)["JITENDRAUNATTI"];
 $MJ = jitendra_pro_dev()[0];
 //The script can be downloaded from here: https://github.com/Jitendraunatti/
 //=============================================================================//
 //                           𝐉𝐈𝐓𝐄𝐍𝐃𝐑𝐀'𝐒_𝐔𝐍𝐈𝐕𝐄𝐑𝐒𝐄
+
 //=============================================================================//
 function jitendraunatti($THANOS, $ROLEX, $NICK_FURY, $KANG, $PETER_PARKER, $CHAVEZ, $JANET, $HANK, $MJ)
 {
